@@ -49,7 +49,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.FromArgb(0, 122, 255);
+            panel1.BackColor = Color.Navy;
             panel1.Controls.Add(label1);
             panel1.Controls.Add(xBtn);
             panel1.Dock = DockStyle.Top;
@@ -71,10 +71,10 @@
             // 
             // xBtn
             // 
-            xBtn.BackColor = Color.FromArgb(18, 18, 24);
+            xBtn.BackColor = Color.WhiteSmoke;
             xBtn.FlatAppearance.BorderSize = 0;
             xBtn.FlatStyle = FlatStyle.Flat;
-            xBtn.ForeColor = Color.FromArgb(0, 122, 255);
+            xBtn.ForeColor = Color.Navy;
             xBtn.Location = new Point(1351, 7);
             xBtn.Name = "xBtn";
             xBtn.Size = new Size(38, 33);
@@ -85,7 +85,7 @@
             // 
             // panel2
             // 
-            panel2.BackColor = Color.FromArgb(0, 122, 255);
+            panel2.BackColor = Color.Navy;
             panel2.Controls.Add(navPnl);
             panel2.Controls.Add(raporlarBtn);
             panel2.Controls.Add(uyeEkleBtn);
@@ -99,6 +99,7 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(221, 854);
             panel2.TabIndex = 10;
+            panel2.Leave += panel2_Leave;
             // 
             // navPnl
             // 
@@ -242,10 +243,12 @@
             // pnlFormAcici
             // 
             pnlFormAcici.Dock = DockStyle.Bottom;
+            pnlFormAcici.ForeColor = Color.AliceBlue;
             pnlFormAcici.Location = new Point(221, 46);
             pnlFormAcici.Name = "pnlFormAcici";
             pnlFormAcici.Size = new Size(1179, 854);
             pnlFormAcici.TabIndex = 11;
+            pnlFormAcici.Paint += pnlFormAcici_Paint;
             // 
             // AdminForm
             // 

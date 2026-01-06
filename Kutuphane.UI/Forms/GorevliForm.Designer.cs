@@ -46,7 +46,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.FromArgb(0, 122, 255);
+            panel1.BackColor = Color.Navy;
             panel1.Controls.Add(label1);
             panel1.Controls.Add(xBtn);
             panel1.Dock = DockStyle.Top;
@@ -82,7 +82,7 @@
             // 
             // panel2
             // 
-            panel2.BackColor = Color.FromArgb(0, 122, 255);
+            panel2.BackColor = Color.Navy;
             panel2.Controls.Add(navPnl);
             panel2.Controls.Add(kitapIadeAlBtn);
             panel2.Controls.Add(kitapOduncVerBtn);
@@ -175,11 +175,13 @@
             // 
             // pnlFormAcici
             // 
+            pnlFormAcici.BackColor = Color.AliceBlue;
             pnlFormAcici.Dock = DockStyle.Bottom;
             pnlFormAcici.Location = new Point(221, 46);
             pnlFormAcici.Name = "pnlFormAcici";
             pnlFormAcici.Size = new Size(1179, 854);
             pnlFormAcici.TabIndex = 11;
+            pnlFormAcici.Paint += pnlFormAcici_Paint;
             // 
             // GorevliForm
             // 

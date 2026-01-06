@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using MySql.Data.MySqlClient;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,29 +12,74 @@ namespace Kutuphane.BLL
 {
     public class OgrenciYonetimi
     {
-        private readonly OgrenciDAL ogrenciDal = new OgrenciDAL();
-        public void OgrenciEkle(Ogrenci ogrenci)
+        private readonly KullaniciDAL _kullaniciDal = new KullaniciDAL();
+        public DataTable KullaniciAra(string q) => _kullaniciDal.KullaniciAra(q);
+        public DataTable UyeleriGetir()
         {
-            if (string.IsNullOrWhiteSpace(ogrenci.Ad) || string.IsNullOrWhiteSpace(ogrenci.Soyad))
-                throw new Exception("Öğrenci adı ve soyadı boş olamaz!");
-           
-            ogrenciDal.OgrenciEkle(ogrenci);
+            return _kullaniciDal.UyeleriGetir();
         }
-        public List<Ogrenci> OgrencileriGetir()
+        public DataTable KulNoAra(string kulNo)
         {
-            return ogrenciDal.OgrencileriGetir();
+            if(string.IsNullOrWhiteSpace(kulNo))
+                return _kullaniciDal.UyeleriGetir();
+            return _kullaniciDal.KulAraNo(kulNo);
         }
-        public void OgrenciGuncelle(Ogrenci ogrenci)
+        public bool UyeEkle(Kullanici uye, out string mesaj)
         {
-            if (ogrenci.Id <= 0)
-                throw new Exception("Geçersiz öğrenci ID'si!");                     
-            ogrenciDal.OgrenciGuncelle(ogrenci);
-        }   
-        public void OgrenciSil(int ogrenciId)
+           if(string.IsNullOrWhiteSpace(uye.KulNo) || string.IsNullOrWhiteSpace(uye.KulAdi) || string.IsNullOrWhiteSpace(uye.KulSoyadi) || string.IsNullOrWhiteSpace(uye.Sifre))
+            {
+                mesaj = "Kullanıcı Numarası, Adı, Soyadı ve Şifre boş olamaz!";
+                return false;
+            }
+            try
+            {
+                int s = _kullaniciDal.UyeEkle(uye);
+                mesaj = s > 0 ? "Üye eklendi." : "Üye eklenemedi.";
+                return s > 0;
+            }
+            catch(MySqlException ex) when (ex.Number == 1062)
+            {
+                string m = ex.Message.ToLower();
+
+                if (m.Contains("uq_kulno"))
+                    mesaj = "Bu kullanıcı numarası zaten kayıtlı.";
+                else if (m.Contains("uq_eposta"))
+                    mesaj = "Bu e-posta ile zaten kayıt var.";
+                else if (m.Contains("uq_telno"))
+                    mesaj = "Bu telefon numarası ile zaten kayıt var.";
+                else
+                    mesaj = "Aynı bilgilere sahip bir kayıt zaten var.";
+
+                return false;
+            }
+        }
+        public bool UyeGuncelle(Kullanici uye, out string mesaj)
         {
-            if (ogrenciId <= 0)
-                throw new Exception("Geçersiz öğrenci ID'si!");
-            ogrenciDal.OgrenciSil(ogrenciId);
+            if(uye.Id <= 0)
+            {
+                mesaj = "Lütfen tablodan bir üye seçin.";
+                return false;
+            }
+            int s = _kullaniciDal.UyeGuncelle(uye);
+            mesaj = s > 0 ? "Üye güncellendi." : "Güncelleme başarısız.";
+            return s > 0;
+        }
+        public bool UyeSil(int id, out string mesaj)
+        {
+            if(id <= 0)
+            {
+                mesaj = "Lütfen tablodan bir üye seçin.";
+                return false;
+            }
+            int s = _kullaniciDal.UyeSil(id);
+            mesaj = s > 0 ? "Üye silindi." : "Silme işlemi başarısız.";
+            return s > 0;
+        }
+        
+        public DataTable UyeleriOduncIcinGetir()
+        {
+            return _kullaniciDal.UyeleriOduncIcinGetir();
         }
     }
 }
+

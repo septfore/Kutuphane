@@ -52,7 +52,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.FromArgb(0, 122, 255);
+            panel1.BackColor = Color.Navy;
             panel1.Controls.Add(yenileBtn);
             panel1.Controls.Add(kitapAdiTxt);
             panel1.Controls.Add(xBtn);
@@ -86,7 +86,7 @@
             kitapAdiTxt.Name = "kitapAdiTxt";
             kitapAdiTxt.Size = new Size(261, 25);
             kitapAdiTxt.TabIndex = 3;
-            kitapAdiTxt.KeyDown += kitapAdiTxt_KeyDown;
+            kitapAdiTxt.TextChanged += kitapAdiTxt_TextChanged;
             // 
             // xBtn
             // 
@@ -103,18 +103,19 @@
             // 
             // kitaplarDgw
             // 
+            kitaplarDgw.BackgroundColor = Color.AliceBlue;
             kitaplarDgw.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            kitaplarDgw.Location = new Point(37, 104);
+            kitaplarDgw.Location = new Point(32, 104);
             kitaplarDgw.Name = "kitaplarDgw";
             kitaplarDgw.RowHeadersWidth = 45;
-            kitaplarDgw.Size = new Size(1110, 709);
+            kitaplarDgw.Size = new Size(1115, 709);
             kitaplarDgw.TabIndex = 11;
             // 
             // frmKitapAra
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(18, 18, 24);
+            BackColor = Color.AliceBlue;
             ClientSize = new Size(1179, 854);
             Controls.Add(kitaplarDgw);
             Controls.Add(panel1);

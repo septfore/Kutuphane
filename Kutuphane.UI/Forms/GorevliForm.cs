@@ -63,7 +63,7 @@ namespace Kutuphane.UI.Forms
             frmkitapara.Show();
         }
 
-        
+
         private void kitapOduncVerBtn_Click(object sender, EventArgs e)
         {
             navPnl.Height = kitapOduncVerBtn.Height;
@@ -103,6 +103,11 @@ namespace Kutuphane.UI.Forms
         private void kitapIadeAlBtn_Leave(object sender, EventArgs e)
         {
             kitapIadeAlBtn.BackColor = Color.FromArgb(0, 122, 255);
+        }
+
+        private void pnlFormAcici_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -75,7 +75,7 @@
             kullaniciAdiTxt.Name = "kullaniciAdiTxt";
             kullaniciAdiTxt.Size = new Size(252, 20);
             kullaniciAdiTxt.TabIndex = 2;
-            kullaniciAdiTxt.Text = "Kullanıcı Adı";
+            kullaniciAdiTxt.Text = "Kullanıcı Numarası";
             kullaniciAdiTxt.MouseClick += kullaniciAdiTxt_MouseClick;
             // 
             // pictureBox3

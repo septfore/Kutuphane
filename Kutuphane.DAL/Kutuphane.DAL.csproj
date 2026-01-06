@@ -94,8 +94,8 @@
     <Compile Include="KitapDAL.cs" />
     <Compile Include="KullaniciDAL.cs" />
     <Compile Include="OduncDAL.cs" />
-    <Compile Include="OgrenciDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RaporDAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Kutuphane.Entities\Kutuphane.Entities.csproj">

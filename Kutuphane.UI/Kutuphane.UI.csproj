@@ -9,6 +9,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="FastReport.Compat" Version="2026.1.2" />
+    <PackageReference Include="FastReport.OpenSource" Version="2026.1.2" />
+    <PackageReference Include="HIC.System.Windows.Forms.DataVisualization" Version="1.0.1" />
+    <PackageReference Include="ScottPlot.WinForms" Version="5.1.57" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Kutuphane.BLL\Kutuphane.BLL.csproj" />
     <ProjectReference Include="..\Kutuphane.Entities\Kutuphane.Entities.csproj" />
   </ItemGroup>

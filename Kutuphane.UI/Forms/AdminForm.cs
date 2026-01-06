@@ -13,6 +13,22 @@ namespace Kutuphane.UI.Forms
 {
     public partial class AdminForm : Form
     {
+        private Form _aktifForm;
+        public void IcerikAc(Form frm)
+        {
+            if(_aktifForm != null)
+            {
+                _aktifForm.Close();
+            }
+            _aktifForm = frm;
+            frm.TopLevel = false;
+            frm.FormBorderStyle = FormBorderStyle.None;
+            frm.Dock = DockStyle.Fill;
+            pnlFormAcici.Controls.Clear();
+            pnlFormAcici.Controls.Add(frm);
+            pnlFormAcici.Tag = frm;
+            frm.Show();
+        }
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (
@@ -30,7 +46,7 @@ namespace Kutuphane.UI.Forms
             navPnl.Height = kitapAraBtn.Height;
             navPnl.Top = kitapAraBtn.Top;
             navPnl.Left = kitapAraBtn.Left;
-            kitapAraBtn.BackColor = Color.FromArgb(18, 18, 24);
+            //kitapAraBtn.BackColor = Color.AliceBlue;
 
             this.pnlFormAcici.Controls.Clear();
             frmKitapAra frmkitapara = new frmKitapAra() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
@@ -49,12 +65,13 @@ namespace Kutuphane.UI.Forms
 
         }
 
+
         private void kitapAraBtn_Click(object sender, EventArgs e)
         {
             navPnl.Height = kitapAraBtn.Height;
             navPnl.Top = kitapAraBtn.Top;
             navPnl.Left = kitapAraBtn.Left;
-            kitapAraBtn.BackColor = Color.FromArgb(18, 18, 24);
+            kitapAraBtn.BackColor = Color.AliceBlue;
 
             this.pnlFormAcici.Controls.Clear();
             frmKitapAra frmkitapara = new frmKitapAra() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
@@ -64,11 +81,11 @@ namespace Kutuphane.UI.Forms
         }
         private void kitapAraBtn_Leave(object sender, EventArgs e)
         {
-            kitapAraBtn.BackColor = Color.FromArgb(0, 122, 255);
+            kitapAraBtn.BackColor = Color.Navy;
         }
         private void kitapOduncVerBtn_Click_1(object sender, EventArgs e)
         {
-            kitapOduncVerBtn.BackColor = Color.FromArgb(18, 18, 24);
+            kitapOduncVerBtn.BackColor = Color.AliceBlue;
             navPnl.Height = kitapOduncVerBtn.Height;
             navPnl.Top = kitapOduncVerBtn.Top;
             navPnl.Left = kitapOduncVerBtn.Left;
@@ -81,7 +98,7 @@ namespace Kutuphane.UI.Forms
         }
         private void kitapOduncVerBtn_Leave(object sender, EventArgs e)
         {
-            kitapOduncVerBtn.BackColor = Color.FromArgb(0, 122, 255);
+            kitapOduncVerBtn.BackColor = Color.Navy;
         }
 
         private void kitapIadeAlBtn_Click_1(object sender, EventArgs e)
@@ -89,7 +106,7 @@ namespace Kutuphane.UI.Forms
             navPnl.Height = kitapIadeAlBtn.Height;
             navPnl.Top = kitapIadeAlBtn.Top;
             navPnl.Left = kitapIadeAlBtn.Left;
-            kitapIadeAlBtn.BackColor = Color.FromArgb(18, 18, 24);
+            kitapIadeAlBtn.BackColor = Color.AliceBlue;
             this.pnlFormAcici.Controls.Clear();
             frmKitapIadeAl frmkitapiadeal = new frmKitapIadeAl() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             frmkitapiadeal.FormBorderStyle = FormBorderStyle.None;
@@ -98,12 +115,12 @@ namespace Kutuphane.UI.Forms
         }
         private void kitapIadeAlBtn_Leave(object sender, EventArgs e)
         {
-            kitapIadeAlBtn.BackColor = Color.FromArgb(0, 122, 255);
+            kitapIadeAlBtn.BackColor = Color.Navy;
         }
 
         private void kitapEkleBtn_Click(object sender, EventArgs e)
         {
-            kitapEkleBtn.BackColor = Color.FromArgb(18, 18, 24);
+            kitapEkleBtn.BackColor = Color.AliceBlue;
             navPnl.Height = kitapEkleBtn.Height;
             navPnl.Top = kitapEkleBtn.Top;
             navPnl.Left = kitapEkleBtn.Left;
@@ -116,7 +133,7 @@ namespace Kutuphane.UI.Forms
 
         private void uyeEkleBtn_Click(object sender, EventArgs e)
         {
-            uyeEkleBtn.BackColor = Color.FromArgb(18, 18, 24);
+            uyeEkleBtn.BackColor = Color.AliceBlue;
             navPnl.Height = uyeEkleBtn.Height;
             navPnl.Top = uyeEkleBtn.Top;
             navPnl.Left = uyeEkleBtn.Left;
@@ -128,31 +145,43 @@ namespace Kutuphane.UI.Forms
         }
 
         private void kitapEkleBtn_Leave(object sender, EventArgs e)
-        {
-            kitapEkleBtn.BackColor = Color.FromArgb(0, 122, 255);
+        {            
+            kitapEkleBtn.BackColor = Color.Navy;
         }
 
         private void uyeEkleBtn_Leave(object sender, EventArgs e)
         {
-            uyeEkleBtn.BackColor = Color.FromArgb(0, 122, 255);
+            uyeEkleBtn.BackColor = Color.Navy;
         }
 
         private void raporlarBtn_Leave(object sender, EventArgs e)
         {
-            raporlarBtn.BackColor = Color.FromArgb(0, 122, 255);
+            raporlarBtn.BackColor = Color.Navy;
         }
 
         private void raporlarBtn_Click(object sender, EventArgs e)
         {
-            raporlarBtn.BackColor = Color.FromArgb(18, 18, 24);
+            raporlarBtn.BackColor = Color.AliceBlue;
             navPnl.Height = raporlarBtn.Height;
             navPnl.Top = raporlarBtn.Top;
             navPnl.Left = raporlarBtn.Left;
             this.pnlFormAcici.Controls.Clear();
-            frmRaporlar frmraporlar = new frmRaporlar() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            frmraporlar.FormBorderStyle = FormBorderStyle.None;
-            this.pnlFormAcici.Controls.Add(frmraporlar);
-            frmraporlar.Show();
+            //frmRaporlar frmraporlar = new frmRaporlar() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            //frmraporlar.FormBorderStyle = FormBorderStyle.None;
+            //this.pnlFormAcici.Controls.Add(frmraporlar);
+            //frmraporlar.Show();
+            IcerikAc(new frmRaporlar(this));
+        }
+
+
+        private void panel2_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnlFormAcici_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

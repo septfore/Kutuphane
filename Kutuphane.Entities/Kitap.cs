@@ -23,5 +23,7 @@ namespace Kutuphane.Entities
                 return OduncDurumu ? "Ödünç Alınmış" : "Mevcut";
             }
         }
+        public string Baski { get; set; }
+        public string Isbn { get; set; }
     }
 }

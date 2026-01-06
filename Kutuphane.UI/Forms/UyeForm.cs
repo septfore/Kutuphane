@@ -95,5 +95,10 @@ namespace Kutuphane.UI.Forms
         {
             kitapOduncAlBtn.BackColor = Color.FromArgb(0, 122, 255);
         }
+
+        private void pnlFormAcici_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
