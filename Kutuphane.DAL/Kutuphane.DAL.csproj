@@ -98,9 +98,9 @@
     <Compile Include="RaporDAL.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Kutuphane.Entities\Kutuphane.Entities.csproj">
+    <ProjectReference Include="..\Kutuphane.Entities\Kutuphane.Domain.csproj">
       <Project>{932dd29a-d0d6-4fc1-96b1-46b31c4f1154}</Project>
-      <Name>Kutuphane.Entities</Name>
+      <Name>Kutuphane.Domain</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

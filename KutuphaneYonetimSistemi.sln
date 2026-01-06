@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kutuphane.DAL", "Kutuphane.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kutuphane.BLL", "Kutuphane.BLL\Kutuphane.BLL.csproj", "{AB11E416-6540-4361-B1F6-BD3BD2F9E195}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kutuphane.Entities", "Kutuphane.Entities\Kutuphane.Entities.csproj", "{932DD29A-D0D6-4FC1-96B1-46B31C4F1154}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kutuphane.Domain", "Kutuphane.Entities\Kutuphane.Domain.csproj", "{932DD29A-D0D6-4FC1-96B1-46B31C4F1154}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

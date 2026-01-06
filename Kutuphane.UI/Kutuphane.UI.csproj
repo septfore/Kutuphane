@@ -17,7 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Kutuphane.BLL\Kutuphane.BLL.csproj" />
-    <ProjectReference Include="..\Kutuphane.Entities\Kutuphane.Entities.csproj" />
+    <ProjectReference Include="..\Kutuphane.Entities\Kutuphane.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>
